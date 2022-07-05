@@ -1,7 +1,8 @@
+import Header from "./components/Layout/Header";
 function App() {
   return (
     <div>
-      <h1>Food Order APP</h1>
+      <Header />
     </div>
   );
 }
