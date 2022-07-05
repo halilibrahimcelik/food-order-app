@@ -1,0 +1,2 @@
+(this["webpackJsonpfood-order"]=this["webpackJsonpfood-order"]||[]).push([[0],{12:function(e,t,r){},14:function(e,t,r){"use strict";r.r(t);var o=r(3),n=r.n(o),c=(r(12),r(0));var s=function(){return Object(c.jsx)("div",{children:Object(c.jsx)("h2",{children:"Let's get started!"})})};n.a.createRoot(document.getElementById("root")).render(Object(c.jsx)(s,{}))}},[[14,1,2]]]);
+//# sourceMappingURL=main.1363dcfb.chunk.js.map
