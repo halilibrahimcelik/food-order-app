@@ -1,9 +1,15 @@
+import React from "react";
+
 import Header from "./components/Layout/Header";
+import Meal from "./components/Meals/Meal";
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Header />
-    </div>
+      <main>
+        <Meal />
+      </main>
+    </React.Fragment>
   );
 }
 
