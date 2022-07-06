@@ -9,14 +9,14 @@ const cartReducer=(state,action)=>{
 
 
     if(action.type==="ADD_FOOD"){
-       const updatedItems=state.items.concat(action.item)
+       const updatedItems=state.items.concat(action.item);
        const newTotalAmount=state.totalAmount + action.item.price * action.item.amount
         return {
             items:updatedItems,
             totalAmount:newTotalAmount
         }
     } 
-    return  defaultCartState
+    return  defaultCartState;
 }
 const CartProvide = (props) => {
     const[cartState,dispatchCartAction] =useReducer(cartReducer,defaultCartState);
