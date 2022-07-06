@@ -3,6 +3,7 @@ import Modal from '../UI/Modal';
 import styles from "./cart.module.css";
 import { useContext } from 'react';
 import CartContext from '../../store/cart-context';
+import CartItem from './CartItem';
 const Cart = (props) => {
     const {onShowCart}=props;
     
@@ -10,9 +11,24 @@ const Cart = (props) => {
 
     const totalAmount=`$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems=cartCtx.items.length>0;
+
+    const cartItemRemoveHanlder=(id)=>{
+        
+    }
+    const cartItemAddeHanlder=(item)=>{
+
+    }
+
+
     const cartITems=<ul className={styles["cart-items"]} >
         { cartCtx.items.map((item)=>
-         <li key={item.id}>{item.name} </li>)}
+       <CartItem key={item.id} 
+       name={item.name}  
+       price={item.price} 
+       amount={item.amount}
+       onRemove={cartItemRemoveHanlder.bind(null,item.id)}
+       onAdd={cartItemAddeHanlder.bind(null,item)}
+       />)}
         </ul>;
   return (
     <Modal onClose={onShowCart} >
