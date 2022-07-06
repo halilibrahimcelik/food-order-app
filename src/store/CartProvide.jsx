@@ -32,6 +32,25 @@ const cartReducer=(state,action)=>{
             totalAmount:newTotalAmount
         }
     } 
+    if(action.type==="REMOVE"){
+const existinngCartITemIndex=state.items.findIndex(item=>item.id===action.id);
+const existingItem=state.items[existinngCartITemIndex];
+const updatedTotalAmount=state.totalAmount - existingItem.price;
+let updatedItems;
+//!if this is the last item we want to remove from the cart
+if(existingItem.amount===1){
+updatedItems=state.items.filter(item=>item.id!==action.id);
+}else{
+const updatedItem={...existingItem,amount:existingItem.amount -1};
+updatedItems=[...state.items];
+updatedItems[existinngCartITemIndex]=updatedItem;
+}
+
+return{
+    items:updatedItems,
+    totalAmount:updatedTotalAmount
+}
+    }
     return  defaultCartState;
 }
 const CartProvide = (props) => {
