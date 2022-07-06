@@ -8,7 +8,7 @@ const CartCtx= useContext(CartContext)
 
     const addToCartHandler=(amount)=>{
 CartCtx.addItem({id:props.id,
-name:props.name,
+name:`${props.name} delicous`,
 amount:amount,
 price:props.price
 })
